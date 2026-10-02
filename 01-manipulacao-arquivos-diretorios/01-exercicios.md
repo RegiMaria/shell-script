@@ -1,4 +1,4 @@
-# Capítulo 1: Manipulação de Arquivos e Diretórios
+# Módulo 1: Manipulação de Arquivos e Diretórios
 
 Este arquivo contém os conceitos, enunciados e soluções de todos os exercícios do **Capítulo 1** do curso de **Introdução ao Shell**.
 
