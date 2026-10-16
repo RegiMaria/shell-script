@@ -112,4 +112,19 @@ head -n 3 seasonal/s*.csv
 
 As combinações`sandhu.*` são descartadas por não casar com nenhuma das opções.
 
+## 9. Como posso remover linhas duplicadas?
+
+* **Conceito:** O comando `uniq` remove linhas duplicadas adjacentes.
+Por isso, ele é quase sempre utilizado após o comando `sort`. A flag `-c` traz a contagem de ocorrências de cada valor.
+
+* **Exercício:** Extraia a segunda coluna de `seasonal/winter.csv`, remova o cabeçalho "Tooth",
+ordene as linhas e exiba a contagem de frequência de cada dente.
+
+Comando:
+
+```Bash
+cut -d , -f 2 seasonal/winter.csv | grep -v Tooth | sort | uniq -c
+```
+
+---
 
