@@ -128,3 +128,48 @@ cut -d , -f 2 seasonal/winter.csv | grep -v Tooth | sort | uniq -c
 
 ---
 
+## 10. Como posso salvar a saída de um pipe?
+
+* **Conceito:** O redirecionador `>` processa saídas antes da execução do comando base no shell.
+Quando colocado isoladamente em comandos simples, a sua posição na linha não altera o resultado final.
+
+* **Pergunta do Exercício:** O que acontece na execução de `> result.txt head -n 3 seasonal/winter.csv`?
+  
+* **Resposta Correta:** A saída do comando é redirecionada para o arquivo como de costume.
+
+* **Reflexão:** O shell identifica os redirecionamentos antes da execução, tornando o comando equivalente a `head -n 3 seasonal/winter.csv > result.txt`.
+
+---
+
+## 11. Como posso interromper um programa em execução?
+
+* **Conceito:** O atalho `Ctrl + C` (representado por ^C) envia o sinal SIGINT ao processo ativo no terminal,
+interrompendo imediatamente programas travados ou em execução prolongada.
+
+* **Exercício:** Execute head sem argumentos e interrompa a execução.
+
+Comando:
+
+```Bash
+# Digite no terminal e pressione Enter:
+head
+
+# Pressione a combinação de teclas:
+Ctrl + C
+```
+
+## 12. Concluindo o Capítulo 3
+
+* **Exercício Prático:** Descubra qual é o arquivo de dados sazonais em seasonal/ com a menor quantidade de linhas.
+
+1. Conte as linhas de todos os arquivos `.csv em seasonal/`.
+
+2. Remova a linha com a contagem total.
+
+3. Ordene o resultado numericamente e selecione o primeiro registro.
+
+Comando:
+
+```Bash
+wc -l seasonal/*.csv | grep -v total | sort -n | head -n 1
+```
