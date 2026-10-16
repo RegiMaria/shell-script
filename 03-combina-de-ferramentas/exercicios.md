@@ -50,6 +50,21 @@ cut -d , -f 2 seasonal/summer.csv | grep -v Tooth
 
 ---
 
+## 4. Como posso combinar vários comandos?
+* **Conceito:** É possível encadear múltiplos comandos em sequência usando vários pipes (`cmd1 | cmd2 | cmd3`).
+
+Exercício: Pegue a coluna 2 de `seasonal/summer.csv`, remova o cabeçalho "Tooth" e selecione apenas o primeiro nome de dente.
+
+Comando:
+
+```Bash
+cut -d , -f 2 seasonal/summer.csv | grep -v Tooth | head -n 1
+```
+
+---
+
+
+
 
 
 
