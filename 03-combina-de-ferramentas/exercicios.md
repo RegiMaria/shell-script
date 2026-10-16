@@ -63,10 +63,53 @@ cut -d , -f 2 seasonal/summer.csv | grep -v Tooth | head -n 1
 
 ---
 
+## 5. Como posso contar os registros em um arquivo?
+* **Conceito:** O comando `wc (word count)` conta caracteres (`-c`), palavras (`-w`) e linhas (`-l`). A flag `-l` é ideal para contar registros em um arquivo de dados.
 
+* **Exercício:** Conte quantos registros em `seasonal/spring.csv` contêm a data de julho de 2017 (2017-07).
 
+Comando:
 
+```Bash
+grep 2017-07 seasonal/spring.csv | wc -l
+```
 
+---
 
+## 6. Como posso especificar vários arquivos de uma vez? (Wildcards)
+* **Conceito:** O caractere curinga * (asterisco) substitui zero ou mais caracteres em nomes de arquivos,
+permitindo selecionar múltiplos arquivos de forma dinâmica.
+
+* **Exercício:** Exiba as 3 primeiras linhas dos arquivos `spring.csv` e `summer.csv` no `diretório seasonal/` usando um curinga.
+
+Comando:
+
+```Bash
+head -n 3 seasonal/s*.csv
+```
+
+---
+
+## 7. Que outros curingas posso usar?
+
+* **Conceito:**
+
+- `?`: Corresponde a exatamente um caractere qualquer.
+
+- `[...]`: Corresponde a qualquer um dos caracteres dentro dos colchetes.
+
+- `{...}`: Expande alternativas separadas por vírgula.
+
+* **Pergunta:* Qual expressão corresponde a `singh.pdf` e `johel.txt`, mas descarta `sandhu.pdf` e `sandhu.txt`?
+
+* **Resposta Correta:** `{singh.pdf, j*.txt}`
+
+* **Reflexão:**
+
+`singh.pdf` busca o arquivo exato.
+
+`j*.txt` pega qualquer arquivo que inicie com j e termine em .txt (como johel.txt).
+
+As combinações`sandhu.*` são descartadas por não casar com nenhuma das opções.
 
 
